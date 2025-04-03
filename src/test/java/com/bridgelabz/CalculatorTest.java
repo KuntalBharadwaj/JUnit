@@ -33,8 +33,9 @@ public class CalculatorTest {
 
     @Test
     void shouldDivideCorrectly(){
-        Assertions.assertThrows(ArithmeticException.class,()->{
+        if(b == 0)Assertions.assertThrows(ArithmeticException.class,()->{
             calculator.divideTwoNumber(a,b);
         });
+        else Assertions.assertEquals(2,calculator.divideTwoNumber(a,b));
     }
 }
